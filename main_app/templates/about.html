@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /*   === Services Section Styling Starts ===   */
+section.services{
+	position: relative;
+	width: 100%;
+	padding: 70px 8% 20px;
+}
+.section-heading{
+	margin-bottom:3rem;
+}
+.services .services-contents{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+	z-index: 2;
+}
+.services .services-contents .service-box{
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.9);
+	padding: 25px 8%;
+	border-left: 3px solid var(--primary-clr);
+}
+.services-contents .service-box .icon-box{
+	position: relative;
+}
+.services-contents .service-box .icon-box i{
+	font-size: calc(22px + 1vw);
+	color: var(--primary-clr);
+}
+.services-contents .service-box h2{
+	font-size: calc(16px + 0.6vw);
+	color: var(--black-clr);
+	font-weight: 500;
+	margin: 20px 0px 10px;
+
+}
+.services-contents .service-box p{
+	font-size: 15px;
+	color: var(--black-grey-clr);
+	margin-bottom: 25px;
+	line-height: 1.4;
+}
+.services-contents .service-box a{
+	text-decoration: none;
+	color: var(--primary-clr);
+	font-size: 15px;
+}
+.services-contents .service-box a:hover{
+	text-decoration: underline;
+}
+
+.footer {
+    background-color: #343a40; /* Dark gray footer */
+    color: #ffffff; /* White text color */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer span {
+    font-size: 0.9rem;
+}
+/*   === Services Section Styling Ends ===   */
+
+</style> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="/" class="btn btn-outline-primary my-1 mx-2">Go Back To Home </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+<!--   *** Services Section Starts ***   -->
+<section class="services" id="services">
+    <!--   === Services Header Starts ===   -->
+    <header class="section-heading">
+        <h1>Services</h1>
+    </header>
+    <!--   === Services Header Ends ===   -->
+    <!--   === Services Contents Starts ===   -->
+    <div class="services-contents">
+        <div class="service-box">
+            <div class="icon-box">
+                <i data-feather="file"></i>
+            </div>
+            <h2>UI/UX Designer</h2>
+            <p>Crafting intuitive and visually engaging user experiences through meticulous UI/UX design. Our service focuses on creating seamless, user-centric digital interfaces to enhance user satisfaction and drive engagement.</p>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="service-box">
+            <div class="icon-box">
+                <i data-feather="folder"></i>
+            </div>
+            <h2>Web Development</h2>
+            <p>Our web development service delivers tailor-made, high-quality websites and web applications that meet your unique business needs, enhancing your online presence and user experience.</p>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="service-box">
+            <div class="icon-box">
+                <i data-feather="search"></i>
+            </div>
+            <h2>Problem Solving</h2>
+            <p>A problem-solving service offers effective solutions to a wide range of issues and challenges, providing expert guidance and assistance to address and resolve problems efficiently.</p>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="service-box">
+            <div class="icon-box">
+                <i data-feather="database"></i>
+            </div>
+            <h2>Data Management</h2>
+            <p>A data management service efficiently organizes, stores, and secures your valuable data, ensuring accessibility and integrity. It streamlines data processes, enhances data-driven decision-making, and provides comprehensive data governance solutions.</p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+    <!--   === Services Contents Ends ===   -->
+</section>
+<!--   *** Services Section Ends ***   -->
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2024 AA Services. All rights reserved.</span>
+    </div>
+</footer>
+
+{% endblock content %}

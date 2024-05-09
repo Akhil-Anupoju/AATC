@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /*   === Blog Section Styling Starts ===   */
+section.blog{
+	position: relative;
+	width: 100%;
+	padding: 60px 8% 60px;
+}
+
+.blog .blog-contents{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	z-index: 2;
+}
+.blog .blog-contents .blog-post{
+	position: relative;
+	padding: 5px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.9);
+}
+.blog-contents .blog-post img{
+	width: 100%;
+}
+.blog-contents .blog-post .date-posted{
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.blog-contents .blog-post .date-posted i{
+	font-size: 15px;
+	color: var(--black-grey-clr);
+}
+.blog-contents .blog-post .date-posted i span{
+	display: inline-block;
+	margin-left: 8px;
+	font-weight: 500;
+	color: var(--black-clr);
+}
+.blog-contents .blog-post h2.title{
+	padding: 0px 10px;
+	font-size: calc(16px + 0.6vw);
+	font-weight: 500;
+	color: var(--black-clr);
+}
+.blog-contents .blog-post p{
+	padding: 0px 10px;
+	font-size: 15px;
+	color: var(--black-grey-clr);
+	line-height: 1.3;
+	margin: 10px 0px 15px;
+}
+.blog-contents .blog-post a{
+	display: inline-block;
+	padding: 0px 10px;
+	text-decoration: none;
+	font-size: 15px;
+	color: var(--primary-clr);
+    font-weight: 600;
+	margin-bottom: 15px;
+	transition: all 0.3s;
+}
+.blog-contents .blog-post a:hover{
+	text-decoration: underline;
+}
+/*   === Blog Section Styling Ends ===   */
+
+</style> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="/" class="btn btn-outline-primary my-1 mx-2">Go Back To Home </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+    </div>
+</nav>
+<!--   *** Blog Section Starts ***   -->
+<section class="blog" id="blog">
+    <!--   === Blog Header Starts ===   -->
+    <header class="section-heading">
+        <h1>Our Blog</h1>
+    </header>
+    <!--   === Blog Header Ends ===   -->
+    <!--   === Blog Contents Starts ===   -->
+    <div class="blog-contents">
+        <div class="blog-post">
+            <img src={% static "dist/img/blog1.jpg" %}>
+            <div class="date-posted">
+                <i data-feather="calendar"></i><span>Dec 25, 2022</span></i>
+                <i data-feather="message-square"><span> 245</span></i>
+            </div>
+            <h2 class="title">From Code to Career: Navigating the Path to Senior Software Engineer</h2>
+            <p>Gain insights into the career progression of a software engineer, including the skills, experiences, and strategies needed to advance to a senior role.</p>
+            <a href="#">View Post</a>
+        </div>
+
+        <div class="blog-post">
+            <img src={% static "dist/img/blog2.jpg" %}>
+            <div class="date-posted">
+                <i data-feather="calendar"></i><span>Jan 03, 2023</span></i>
+                <i data-feather="message-square"><span> 225</span></i>
+            </div>
+            <h2 class="title">AI and Machine Learning: A Primer for Software Engineers</h2>
+            <p>An introduction to artificial intelligence and machine learning concepts, their relevance in software development, and how to get started with AI-driven projects.</p>
+            <a href="#">View Post</a>
+        </div>
+
+        <div class="blog-post">
+            <img src={% static "dist/img/blog3.png" %}>
+            <div class="date-posted">
+                <i data-feather="calendar"></i><span>Sep 10, 2023</span></i>
+                <i data-feather="message-square"><span> 265</span></i>
+            </div>
+            <h2 class="title">Bridging the Gap: Communication Skills for Software Engineers.</h2>
+            <p>Learn the importance of effective communication in software development teams, including tips for improving collaboration and minimizing misunderstandings.</p>
+            <a href="#">View Post</a>
+        </div>
+    </div>
+    <!--   === Blog Contents Ends ===   -->
+</section>
+<!--   *** Blog Section Ends ***   -->
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2024 AA Services. All rights reserved.</span>
+    </div>
+</footer>
+
+{% endblock content %}
+

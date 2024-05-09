@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .footer {
+        background-color: #343a40; /* Dark gray footer */
+        color: #ffffff; /* White text color */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      
+      .footer span {
+        font-size: 0.9rem;
+      }
+</style> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="{% url "home" %}" class="btn btn-outline-primary my-1 mx-2">Go Back To Home </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="border rounded p-3">
+                <h1 class="text-center my-3">
+                  <i class="fa fa-phone-volume"></i> <!-- Icon here -->
+                    <b>Contact Us</b>
+                </h1>
+                <!-- Your contact form -->
+                <form action="/contact" method="post">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        <label for="exampleFormControlInput1" class="form-label"><b>Name</b></label>
+                        <input type="name" class="form-control" id="exampleFormControlInput1" name="name"
+                            placeholder="Enter your Name">
+                    </div>
+                    <div class="mb-2">
+                        <label for="exampleFormControlInput2" class="form-label"><b>Email Address</b></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email"
+                            placeholder="Enter your Email">
+                    </div>
+                    <div class="mb-2">
+                        <label for="exampleFormControlInput3" class="form-label"><b>Phone Number</b></label>
+                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="phone"
+                            placeholder="Enter your Phone Number">
+                    </div>
+                    <div class="mb-2">
+                        <label for="exampleFormControlTextarea1" class="form-label"><b>Message</b></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                            name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2024 AA Services. All rights reserved.</span>
+    </div>
+    <div class="footer_social">
+        <a href="https://www.facebook.com/profile.php?id=100093980513619&sk=about_overview">
+          <i class="fas fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/AnupojuAkhil">
+          <i class="fas fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/akhil-anupoju/">
+          <i class="fas fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/anupoju_akhil_06?igsh=MWR5NnhjNmU3OHEycg==">
+          <i class="fas fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://in.pinterest.com/anupojuakhil/">
+          <i class="fas fa-pinterest" aria-hidden="true"></i>
+        </a>
+      </div>
+</footer>
+
+{% endblock content %}
